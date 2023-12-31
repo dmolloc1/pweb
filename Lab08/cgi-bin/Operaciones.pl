@@ -70,7 +70,7 @@ sub calcular {
 
 my $respFinal = calcular((sinEspacio($problem)));
 print "El resultado es: $respFinal\n";
-print $cgi -> header('text/html');
+print $i -> header('text/html');
 print <<HTML;
 <!DOCTYPE html>
 <html lang="en">
