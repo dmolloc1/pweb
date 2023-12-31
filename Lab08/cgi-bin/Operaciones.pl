@@ -46,6 +46,27 @@ sub divide {
 }
 
 sub calcular {
-    my ($p) = @_;
-    my $sol = 0;
-    return $sol;
+    my ($expresion) = @_;
+    my @partes = split(/\s*([+\-\/\*])\s*/, $expresion);
+
+    my $resultado = @partes[0]; # El primer número se toma como el resultado inicial
+
+    for ($i = 1; $i < escalar @partes) {
+        my $operador = @partes[i];
+        my $otro_numero = @partes[i + 1];
+
+        if ($operador eq '+') {
+            $resultado += $otro_numero;
+        } elsif ($operador eq '-') {
+            $resultado -= $otro_numero;
+        } elsif ($operador eq '*') {
+            $resultado *= $otro_numero;
+        } elsif ($operador eq '/') {
+            $resultado /= $otro_numero;
+        }
+    }
+
+    return $resultado;
+}
+my $respFinal = calcular(divide($problem));
+
