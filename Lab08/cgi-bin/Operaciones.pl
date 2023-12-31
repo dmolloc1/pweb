@@ -1,10 +1,10 @@
 #!/usr/bin/perl
 use warnings;
-
 my $problem = <STDIN>;
 
 sub sinEspacio {
-    my ($a) = @_;
+    my $a = $_[0];
+    print $a;
     my $result = "";
     for (my $i = 0; $i < length($a); $i++) {
         if (substr($a, $i, 1) ne " ") {
@@ -15,7 +15,8 @@ sub sinEspacio {
 }
 
 sub divide {
-    my ($p) = @_;
+    my $p = $_[0];
+    print 
     my $inicio = 0;
     my $iC = 0;
     my $fin = 0;
@@ -44,14 +45,14 @@ sub divide {
 }
 
 sub calcular {
-    my ($expresion) = @_;
+    my ($expresion) = @_[0];
     my @partes = split(/\s*([+\-\/\*])\s*/, $expresion);
 
-    my $resultado = @partes[0]; # El primer número se toma como el resultado inicial
+    my $resultado = shift @partes; # El primer número se toma como el resultado inicial
 
-    for ($i = 1; $i < escalar @partes) {
-        my $operador = @partes[i];
-        my $otro_numero = @partes[i + 1];
+    while(@partes) {
+        my $operador = shift @partes;
+        my $otro_numero = shift @partes;
 
         if ($operador eq '+') {
             $resultado += $otro_numero;
@@ -66,5 +67,5 @@ sub calcular {
 
     return $resultado;
 }
-my $respFinal = calcular(divide($problem));
-
+my $respFinal = calcular(divide(sinEspacio($problem)));
+print "El resultado es: $respFinal\n";
