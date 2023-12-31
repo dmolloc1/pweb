@@ -23,7 +23,7 @@ sub divide {
     my $i = 0;
     my $continuar = index($p, "(") != -1;
     if (!$continuar) {
-        calcular($p);
+        return calcular($p);
     }
     while ($continuar) {
         while ($inicio != $fin && $i < length($p)) {
@@ -40,7 +40,7 @@ sub divide {
         $p = substr($p, 0, $iC) . divide(substr($p, $iC + 1, $fin - $iC - 1)) . substr($p, $fin + 1, length($p) - $fin);
         $continuar = index($p, "(") != -1;
     }
-    return $p;
+    return calcular($p);
 }
 
 sub calcular {
