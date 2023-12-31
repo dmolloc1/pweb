@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 use warnings;
+
 my $problem = <STDIN>;
 chomp $problem;
 
@@ -15,7 +16,8 @@ sub sinEspacio {
 }
 
 sub divide {
-    my ($p) = @_;
+    my @temp = @_;
+    my $p = @temp[0];
     my $inicio = 0;
     my $iC = 0;
     my $fin = 0;
@@ -42,7 +44,7 @@ sub divide {
 
 sub calcular {
     my ($expresion) = @_;
-    my @partes = split(/\s*([+\-\/\*])\s*/, $expresion);
+    my @partes = $expresion =~ /(\d+|[-+*\/])/g;;
 
     my $resultado = shift @partes; # El primer número se toma como el resultado inicial
 
