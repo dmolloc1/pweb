@@ -1,9 +1,7 @@
 #!/usr/bin/perl
 use warnings;
-use CGI;
 
-my $q = CGI->new;
-my $problem = $q->param('Operacion') ;
+my $problem = <STDIN>;
 
 sub sinEspacio {
     my ($a) = @_;
@@ -57,11 +55,11 @@ sub calcular {
 
         if ($operador eq '+') {
             $resultado += $otro_numero;
-        } elsif ($operador eq '-') {
+        } else if ($operador eq '-') {
             $resultado -= $otro_numero;
-        } elsif ($operador eq '*') {
+        } else if ($operador eq '*') {
             $resultado *= $otro_numero;
-        } elsif ($operador eq '/') {
+        } else if ($operador eq '/') {
             $resultado /= $otro_numero;
         }
     }
