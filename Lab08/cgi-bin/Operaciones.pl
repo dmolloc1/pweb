@@ -1,9 +1,11 @@
 #!/usr/bin/perl
 use warnings;
+use CGI;
 
-my $problem = <STDIN>;
+my $q = CGI->new;
+my $problem = $q->param('operacion') ;
 chomp $problem;
-
+ #metodo para quitar los espacios
 sub sinEspacio {
     my ($a) = @_;
     my $result = "";
@@ -14,7 +16,7 @@ sub sinEspacio {
     }
     return $result;
 }
-
+#Metodo para identificar los parentesis 
 sub divide {
     my @temp = @_;
     my $p = @temp[0];
@@ -41,10 +43,10 @@ sub divide {
     }
     return $p;
 }
-
+#resuelve expresiones simples
 sub calcular {
     my ($expresion) = @_;
-    my @partes = $expresion =~ /(\d+|[-+*\/])/g;;
+    my @partes = $expresion =~ /(\d+|[-+*\/])/g;; #separa operadores de numeros y los coloca en un array
 
     my $resultado = shift @partes; # El primer número se toma como el resultado inicial
 
@@ -68,3 +70,28 @@ sub calcular {
 
 my $respFinal = calcular((sinEspacio($problem)));
 print "El resultado es: $respFinal\n";
+print $cgi -> header('text/html');
+print <<HTML;
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi Calculadora</title>
+        <link rel="preload" href="css/style.css" as="style"><!--Para que sea más rapido-->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body >
+        <div class="contenedor sombra" background-color = white>
+            <div class="section1">
+                <h1>Mi calculadora</h1>
+            </div>
+            
+            <div >
+                <h3>El resultado es: $respFinal</h3>
+                
+            </div>
+        </div>
+    </body>
+</html>
+HTML
