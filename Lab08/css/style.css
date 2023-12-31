@@ -1,3 +1,18 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 16px;/*1 rem = 10 pixeles*/
+    background-color: rgba(5, 2, 65, 0.1) ;
+}
+form {
+    width: 100%;
+    padding: 150px 0px 100px 0px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 0 3px rgba(77, 77, 77, 0.1);
+}
+
 p {
     text-align: left;
     float: left;
