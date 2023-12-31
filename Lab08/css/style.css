@@ -1,0 +1,19 @@
+p {
+    text-align: left;
+    float: left;
+    color: #040303;
+    padding: 10px 20px 15px 20px;
+}
+.section1{
+    background-image: linear-gradient(to right,#05056b 0%, rgb(62, 188, 246) 100%);
+    padding: 20px ;
+    background-size: cover;
+    height: 30pix;
+    position: relative;
+    margin-bottom: 20 pix;
+}
+.section1 h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 54px;
+    color: white;
+}
