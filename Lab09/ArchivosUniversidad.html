@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
     
-    <link rel="preload" href="style.css" as="style"><!--Para que sea más rapido-->
+    <link rel="preload" href="./css/style.css" as="style"><!--Para que sea más rapido-->
     <link href="style.css" rel="stylesheet">
 </head>
 <body >
@@ -24,23 +24,19 @@
                 <form action="/cgi-bin/File_filter.pl" method="get">
                     <label for="kind">Búsqueda bibliográfica por:</label>
                     <select name="kind">
-                        <option value="codigo">Código de Entidad</option>
-                        <option value="nombre">Nombre</option>
-                        <option value="gestion">Tipo de Gestión</option>
-                        <option value="periodo_licenciamiento">Período de Licenciamiento</option>
-                        <option value="codigo_filial">Código de Filial</option>
-                        <option value="nombre_filial">Nombre de Filial</option>
-                        <option value="departamento_filial">Departamento de Filial</option>
-                        <option value="provincia_filial">Provincia de Filial</option>
-                        <option value="codigo_local">Código de Local</option>
-                        <option value="denominacion_programa">Denominación del Programa</option>
-                        <option value="tipo_nivel_academico">Tipo de Nivel Académico</option>
-                        <option value="nivel_academico">Nivel Académico</option>
-                        <option value="nombre_clase_programa_n2">Nombre de Clase de Programa N2</option>
+                        <option value="CODIGO_ENTIDAD">CÓDIGO DE ENTIDAD</option>
+                        <option value="NOMBRE">NOMBRE</option>
+                        <option value="PERIODO_LICENCIAMIENTO">PERÍODO DE LICENCIAMIENTO</option>
+                        <option value="CODIGO_FILIAL">CÓDIGO DE FILIAL</option>
+                        <option value="NOMBRE_FILIAL">NOMBRE DE FILIAL</option>
+                        <option value="CODIGO_LOCAL">CÓDIGO DE LOCAL</option>
+                        <option value="DENOMINACION_PROGRAMA">DENOMINACIÓN DEL PROGRAMA</option>
+                        <option value="TIPO_NIVEL_ACADEMICO">TIPO DE NIVEL ACADÉMICO</option>
+                        <option value="NIVEL_ACADEMICO">NIVEL ACADÉMICO</option>
+                        <option value="NOMBRE_CLASE_PROGRAMA_N2">NOMBRE DE CLASE DE PROGRAMA N2</option>
                     </select>
                     <br>
-                    <br><input type="text" name="keyword"><br>
-                    <br>
+                    <br><input type="text" name="keyword"><br><br>
                     <input type="submit" value="Buscar">
            
                   </form>
