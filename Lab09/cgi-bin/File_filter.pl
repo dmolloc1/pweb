@@ -82,7 +82,7 @@ if(!($kind eq "") && !($keyword eq "")){
 HTML
   while(my $linea = <IN>){
     chomp $linea; 
-    my @uni = matchLine($line);
+    my @uni = toArray($line);
    # my $value = $dict{$kind};
     #if(defined($value) && $value =~ /.*$keyword.*/){
      # print "<h1>Encontrado: $line</h1>\n";
@@ -90,15 +90,15 @@ HTML
       #next; #continue the loop
     #}
   }
-  close(IN)
+  close(IN);
         
         
-    }
-else{
+}else{
 
 }
-
-
-
-
-close($archivo);
+sub toArray {
+    my $linea = $_[0];
+    my @arreglo = $linea =~ /[^|]+/g;
+    
+    return @arreglo;
+}
