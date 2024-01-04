@@ -21,49 +21,28 @@
             <h2>¿Quieres seguir informado?</h2>
             <p>Busca Universidades liscenciadas aquí</p>
             <div class="">
-                <form action="/action_page.php">
-                    <label for="codigo">Codigo de Entidad:</label>
-                    <input type="text" id="codigo" name="codigo" value="John"><br>
-                  
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" value="Doe"><br>
-                  
-                    <label for="gestion">Tipo de Gestión:</label>
-                    <input type="text" id="gestion" name="gestion" value="Doe">
-                  
-                    <label for="periodo_licenciamiento">Período de Licenciamiento:</label>
-                    <input type="text" id="periodo_licenciamiento" name="periodo_licenciamiento"><br>
-                  
-                    <label for="codigo_filial">Código de Filial:</label>
-                    <input type="text" id="codigo_filial" name="codigo_filial">
-                  
-                    <label for="nombre_filial">Nombre de Filial:</label>
-                    <input type="text" id="nombre_filial" name="nombre_filial"><br>
-                  
-                    <label for="departamento_filial">Departamento de Filial:</label>
-                    <input type="text" id="departamento_filial" name="departamento_filial">
-                  
-                    <label for="provincia_filial">Provincia de Filial:</label>
-                    <input type="text" id="provincia_filial" name="provincia_filial"><br>
-                  
-                    <label for="codigo_local">Código de Local:</label>
-                    <input type="text" id="codigo_local" name="codigo_local"><br>
-                  
-                    <label for="denominacion_programa">Denominación del Programa:</label>
-                    <input type="text" id="denominacion_programa" name="denominacion_programa"><br>
-                  
-                    <label for="tipo_nivel_academico">Tipo de Nivel Académico:</label>
-                    <input type="text" id="tipo_nivel_academico" name="tipo_nivel_academico"><br>
-                  
-                    <label for="nivel_academico">Nivel Académico:</label>
-                    <input type="text" id="nivel_academico" name="nivel_academico"><br>
-                  
-                    <label for="nombre_clase_programa_n2">Nombre de Clase de Programa N2:</label>
-                    <input type="text" id="nombre_clase_programa_n2" name="nombre_clase_programa_n2"><br><br>
-                   
-                    <div class="b">
-                        <input type="submit" value="Submit">
-                    </div>
+                <form action="/cgi-bin/File_filter.pl" method="get">
+                    <label for="kind">Búsqueda bibliográfica por:</label>
+                    <select name="kind">
+                        <option value="codigo">Código de Entidad</option>
+                        <option value="nombre">Nombre</option>
+                        <option value="gestion">Tipo de Gestión</option>
+                        <option value="periodo_licenciamiento">Período de Licenciamiento</option>
+                        <option value="codigo_filial">Código de Filial</option>
+                        <option value="nombre_filial">Nombre de Filial</option>
+                        <option value="departamento_filial">Departamento de Filial</option>
+                        <option value="provincia_filial">Provincia de Filial</option>
+                        <option value="codigo_local">Código de Local</option>
+                        <option value="denominacion_programa">Denominación del Programa</option>
+                        <option value="tipo_nivel_academico">Tipo de Nivel Académico</option>
+                        <option value="nivel_academico">Nivel Académico</option>
+                        <option value="nombre_clase_programa_n2">Nombre de Clase de Programa N2</option>
+                    </select>
+                    <br>
+                    <br><input type="text" name="keyword"><br>
+                    <br>
+                    <input type="submit" value="Buscar">
+           
                   </form>
             </div>
             <p>Toma una decisión informada </p>        
