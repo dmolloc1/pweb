@@ -82,20 +82,29 @@ if(!($kind eq "") && !($keyword eq "")){
 HTML
   while(my $linea = <IN>){
     chomp $linea; 
-    my @uni = toArray($line);
-   # my $value = $dict{$kind};
-    #if(defined($value) && $value =~ /.*$keyword.*/){
-     # print "<h1>Encontrado: $line</h1>\n";
-      #$flag = 1;
-      #next; #continue the loop
-    #}
+    my @uni = toArray($linea);
+    my $value = $hmap{$kind};
+    if(defined($value) && $uni[$value] =~ /.*$keyword.*/){
+        print "<tr>\n";
+        foreach my $v(@uni){
+            print "<td>$v</td>\n";
+        }
+        print "</tr>\n";
+        $flag = 1;
+    }
   }
   close(IN);
-        
-        
-}else{
-
 }
+print "</table>\n";
+if(!$flag){
+    print "<h1>No encontrado</h1>\n";
+}
+
+print <<HTML;
+        <p>Ingrese <a href="../File_filter.pl">AQUI</a> para regresar al buscador</p>
+    </body>
+</html>
+HTML
 sub toArray {
     my $linea = $_[0];
     my @arreglo = $linea =~ /[^|]+/g;
