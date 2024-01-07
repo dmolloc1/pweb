@@ -4,8 +4,8 @@ use CGI;
 
 my $q = CGI->new;
 #recive las variables del formulario
-my $kind = $q->param("kind");
 my $keyword = $q->param("keyword");
+my $kind = $q->param("kind");
 my %hmap = (
     "CODIGO_ENTIDAD" => 0,
     "NOMBRE" => 1,
@@ -50,7 +50,9 @@ print <<HTML;
 <body >
 HTML
 
-if(!($kind eq "") && !($keyword eq "")){
+my $flag;
+
+if(!(($kind= $q->param("kind") eq "")) && !($keyword eq "")){
     open(IN, '<', "../cvs/Programas de Universidades.csv") or die "<h1>ERROR: open file</h1>\n";
     print "<table>\n";
     print <<HTML;
@@ -84,13 +86,14 @@ HTML
     chomp $linea; 
     my @uni = toArray($linea);
     my $value = $hmap{$kind};
-    if(defined($value) && $uni[$value] =~ /.*$keyword.*/){
+    if($uni[$value] =~ /.*$keyword.*/){
         print "<tr>\n";
         foreach my $v(@uni){
             print "<td>$v</td>\n";
         }
         print "</tr>\n";
         $flag = 1;
+        next;
     }
   }
   close(IN);
@@ -101,7 +104,7 @@ if(!$flag){
 }
 
 print <<HTML;
-        <p>Ingrese <a href="../File_filter.pl">AQUI</a> para regresar al buscador</p>
+        <p>Ingrese <a href="./file_filter.pl">AQUI</a> para regresar al buscador</p>
     </body>
 </html>
 HTML

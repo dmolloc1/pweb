@@ -20,7 +20,7 @@ h1{
     
 }
 .section1{
-    background-image: url(img/universidad.jpeg);
+    background-image: url(../img/universidad.jpeg);
     background-size: cover;
     
     height: 43rem;
@@ -71,4 +71,25 @@ h2{
     font-size: 2.5rem ;
     color:black;
     padding: 0%;
+}
+.fields select {
+    display: inline-block;
+    width: 100%;
+    padding: 7px; /* Aumenta el padding para hacer el botón más grande */
+    color: black;
+    font-size: 1.2rem; /* Aumenta el tamaño de la fuente */
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 12px;
+    border-radius: 12px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: black;
+    font-size: 1.5rem; 
+    font-weight: bold;
+}
+p{
+    font-size: 1.2rem; 
+
 }
